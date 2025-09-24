@@ -9,7 +9,7 @@ export const siteConfig = {
     twitter: "https://x.com/rfitzio",
     github: "https://github.com/kourosh-forti-hands",
   },
-  aboutMe:,
+  // aboutMe:
   skills: ["Python", "AWS", "Docker"],
   projects: [
   ],
