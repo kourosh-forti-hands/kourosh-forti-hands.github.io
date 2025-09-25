@@ -4,70 +4,50 @@ import { siteConfig } from "../config";
 
 <section
   id="hero"
-  class="min-h-screen flex items-center relative overflow-hidden"
-  style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background: #ffffff;"
+  class="min-h-screen flex items-center bg-white"
 >
-  <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-70"></div>
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="max-w-3xl animate-fadeIn">
-      <!-- Greeting with animation -->
-      <div class="inline-block">
-        <p class="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-6">
-          Welcome to my portfolio
-        </p>
-      </div>
-
-      <!-- Name with gradient effect -->
-      <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-6">
-        <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          {siteConfig.name}
-        </span>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="max-w-3xl">
+      <!-- Name -->
+      <h1 class="text-5xl sm:text-6xl font-bold text-gray-900 mb-4">
+        {siteConfig.name}
       </h1>
 
-      <!-- Title with better styling -->
-      <h2 class="text-2xl sm:text-3xl font-medium text-gray-700 mb-8">
+      <!-- Title -->
+      <h2 class="text-2xl sm:text-3xl font-medium text-blue-600 mb-6">
         {siteConfig.title}
-        <span class="inline-block ml-3 px-3 py-1 text-xs font-semibold bg-green-100 text-green-800 rounded-full uppercase tracking-wide">
-          Available for hire
-        </span>
       </h2>
 
-      <!-- About description with better typography -->
-      <p class="text-lg text-gray-600 mb-10 max-w-2xl leading-relaxed">
+      <!-- About description -->
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl leading-relaxed">
         {siteConfig.aboutMe}
       </p>
 
-      <!-- Enhanced CTA buttons -->
+      <!-- CTA buttons -->
       <div class="flex flex-col sm:flex-row gap-4 mb-12">
         <a
           href="#projects"
-          class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-xl text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transform transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
+          class="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
         >
-          <span>View My Work</span>
-          <svg width="20" height="20" class="ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
+          View My Work
         </a>
         <a
           href={`mailto:${siteConfig.social.email}`}
-          class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-xl text-gray-700 bg-white border-2 border-gray-200 hover:border-blue-500 hover:text-blue-600 transform transition-all duration-200 hover:scale-105 shadow-md hover:shadow-lg"
+          class="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
         >
-          <svg width="20" height="20" class="mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-          <span>Get In Touch</span>
+          Get In Touch
         </a>
       </div>
 
       <!-- Social Links -->
-      <div class="flex gap-6">
+      <div class="flex gap-4">
         {siteConfig.social?.email && (
           <a
             href={`mailto:${siteConfig.social.email}`}
             aria-label="Email"
-            class="text-gray-500 hover:text-blue-600 transition-colors duration-200"
+            class="p-2 text-gray-600 hover:text-blue-600 transition-colors duration-200"
           >
-            <svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg width="20" height="20" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           </a>
@@ -78,9 +58,9 @@ import { siteConfig } from "../config";
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            class="text-gray-500 hover:text-blue-600 transition-colors duration-200"
+            class="p-2 text-gray-600 hover:text-blue-600 transition-colors duration-200"
           >
-            <svg width="16" height="16" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <svg width="20" height="20" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd" />
             </svg>
           </a>
@@ -91,9 +71,9 @@ import { siteConfig } from "../config";
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            class="text-gray-500 hover:text-blue-600 transition-colors duration-200"
+            class="p-2 text-gray-600 hover:text-blue-600 transition-colors duration-200"
           >
-            <svg width="16" height="16" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <svg width="20" height="20" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd" />
             </svg>
           </a>
@@ -102,4 +82,3 @@ import { siteConfig } from "../config";
     </div>
   </div>
 </section>
-
