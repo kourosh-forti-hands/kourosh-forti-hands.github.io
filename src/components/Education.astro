@@ -3,73 +3,55 @@ import { siteConfig } from "../config";
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 const hasCertifications = siteConfig.certifications && siteConfig.certifications.length > 0;
 
-// Function to get certification category color and icon
+// Function to get certification category color and icon type
 function getCertificationInfo(cert) {
   if (cert.includes('AI') || cert.includes('Agentic')) {
     return {
       gradient: "from-blue-500 to-purple-600",
       bg: "from-blue-50/80 to-purple-50/80",
       border: "border-blue-200/60",
-      icon: (
-        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-        </svg>
-      )
+      iconType: "ai",
+      iconColor: "text-blue-600"
     };
   } else if (cert.includes('AWS') || cert.includes('Cloud') || cert.includes('Azure')) {
     return {
       gradient: "from-orange-500 to-red-600",
       bg: "from-orange-50/80 to-red-50/80",
       border: "border-orange-200/60",
-      icon: (
-        <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-        </svg>
-      )
+      iconType: "cloud",
+      iconColor: "text-orange-600"
     };
   } else if (cert.includes('Google') || cert.includes('Professional')) {
     return {
       gradient: "from-green-500 to-emerald-600",
       bg: "from-green-50/80 to-emerald-50/80",
       border: "border-green-200/60",
-      icon: (
-        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      )
+      iconType: "check",
+      iconColor: "text-green-600"
     };
   } else if (cert.includes('Security') || cert.includes('NSE')) {
     return {
       gradient: "from-red-500 to-pink-600",
       bg: "from-red-50/80 to-pink-50/80",
       border: "border-red-200/60",
-      icon: (
-        <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      )
+      iconType: "security",
+      iconColor: "text-red-600"
     };
   } else if (cert.includes('Network') || cert.includes('CCNA')) {
     return {
       gradient: "from-cyan-500 to-blue-600",
       bg: "from-cyan-50/80 to-blue-50/80",
       border: "border-cyan-200/60",
-      icon: (
-        <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-        </svg>
-      )
+      iconType: "network",
+      iconColor: "text-cyan-600"
     };
   } else {
     return {
       gradient: "from-slate-500 to-gray-600",
       bg: "from-slate-50/80 to-gray-50/80",
       border: "border-slate-200/60",
-      icon: (
-        <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-        </svg>
-      )
+      iconType: "default",
+      iconColor: "text-slate-600"
     };
   }
 }
@@ -96,16 +78,16 @@ function getCertificationInfo(cert) {
         <svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="neuralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0.5" />
+              <stop offset="0%" stop-color="#60a5fa" stop-opacity="1" />
+              <stop offset="100%" stop-color="#a855f7" stop-opacity="0.5" />
             </linearGradient>
           </defs>
           <g>
             <line x1="5%" y1="25%" x2="95%" y2="75%" stroke="url(#neuralGradient)" stroke-width="0.5">
-              <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" repeatCount="indefinite"></animate>
             </line>
             <line x1="15%" y1="60%" x2="85%" y2="40%" stroke="url(#neuralGradient)" stroke-width="0.5">
-              <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"></animate>
             </line>
           </g>
         </svg>
@@ -229,7 +211,36 @@ function getCertificationInfo(cert) {
                         <div class="flex items-center gap-3 mb-3">
                           <div class={`w-10 h-10 rounded-xl bg-gradient-to-br ${certInfo.gradient} p-0.5 group-hover:scale-110 transition-transform duration-300`}>
                             <div class="w-full h-full bg-slate-900 rounded-xl flex items-center justify-center">
-                              {certInfo.icon}
+                              {certInfo.iconType === 'ai' && (
+                                <svg class={`w-5 h-5 ${certInfo.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                              )}
+                              {certInfo.iconType === 'cloud' && (
+                                <svg class={`w-5 h-5 ${certInfo.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                                </svg>
+                              )}
+                              {certInfo.iconType === 'check' && (
+                                <svg class={`w-5 h-5 ${certInfo.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                              )}
+                              {certInfo.iconType === 'security' && (
+                                <svg class={`w-5 h-5 ${certInfo.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                              )}
+                              {certInfo.iconType === 'network' && (
+                                <svg class={`w-5 h-5 ${certInfo.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                </svg>
+                              )}
+                              {certInfo.iconType === 'default' && (
+                                <svg class={`w-5 h-5 ${certInfo.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                              )}
                             </div>
                           </div>
                         </div>

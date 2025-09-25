@@ -493,7 +493,10 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
     new EnhancedHeader();
   });
 
-  // Smooth scrolling for all anchor links - handled by CSS below
+  // Smooth scrolling for all anchor links
+  html {
+    scroll-behavior: smooth;
+  }
 </script>
 
 <style>
@@ -592,10 +595,5 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
   .nav-link.active,
   .btn-cta:hover {
     box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
-  }
-
-  /* Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
   }
 </style>

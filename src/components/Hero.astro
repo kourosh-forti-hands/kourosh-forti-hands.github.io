@@ -20,19 +20,19 @@ import { siteConfig } from "../config";
   <svg class="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:0" />
+        <stop offset="0%" stop-color="#4facfe" stop-opacity="1" />
+        <stop offset="100%" stop-color="#00f2fe" stop-opacity="0" />
       </linearGradient>
     </defs>
     <g class="neural-lines">
       <line x1="10%" y1="20%" x2="90%" y2="80%" stroke="url(#lineGradient)" stroke-width="1">
-        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"></animate>
       </line>
       <line x1="80%" y1="10%" x2="20%" y2="90%" stroke="url(#lineGradient)" stroke-width="1">
-        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="4s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="4s" repeatCount="indefinite"></animate>
       </line>
       <line x1="30%" y1="70%" x2="70%" y2="30%" stroke="url(#lineGradient)" stroke-width="1">
-        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.5s" repeatCount="indefinite"></animate>
       </line>
     </g>
   </svg>
@@ -40,11 +40,11 @@ import { siteConfig } from "../config";
   <!-- Matrix-style Code Rain (subtle) -->
   <div class="absolute inset-0 opacity-10">
     <div class="code-rain">
-      <span style="animation-delay: 0s;">01001</span>
-      <span style="animation-delay: 1s;">11010</span>
-      <span style="animation-delay: 2s;">10110</span>
-      <span style="animation-delay: 0.5s;">01101</span>
-      <span style="animation-delay: 1.5s;">10011</span>
+      <span style={{animationDelay: "0s"}}>01001</span>
+      <span style={{animationDelay: "1s"}}>11010</span>
+      <span style={{animationDelay: "2s"}}>10110</span>
+      <span style={{animationDelay: "0.5s"}}>01101</span>
+      <span style={{animationDelay: "1.5s"}}>10011</span>
     </div>
   </div>
 
