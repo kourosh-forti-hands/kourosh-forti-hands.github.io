@@ -3,6 +3,23 @@ export const siteConfig = {
   title: "AI Engineer",
   description: "Portfolio website of Kourosh Mobl",
   accentColor: "#1d4ed8",
+  colors: {
+    primary: "#1d4ed8",
+    secondary: "#6366f1",
+    tertiary: "#8b5cf6",
+    accent: "#06b6d4",
+    neural: "#10b981",
+    ai: "#f59e0b",
+    cyber: "#ef4444",
+    gradient: {
+      aiPrimary: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      aiSecondary: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+      tech: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+      neural: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
+      cyber: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+      glass: "linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)"
+    }
+  },
   social: {
     email: "Moblkourosh@gmail.com",
     linkedin: "https://linkedin.com/in/kouroshmobl",

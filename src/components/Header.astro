@@ -6,73 +6,594 @@ const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 ---
 
+<!-- Enhanced Glass Morphism Header -->
 <header
   id="header"
-  class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out"
 >
-  <nav class="max-w-7xl mx-auto px-8 py-4">
-    <ul class="flex items-center gap-8 justify-center">
-      <li>
-        <a
-          href="#about"
-          class="text-gray-700 hover:text-black transition-colors font-medium"
-        >
-          About
-        </a>
-      </li>
-      {
-        hasProjects && (
-          <li>
+  <!-- Glass Navigation Bar -->
+  <nav class="relative">
+    <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-xl border-b border-white/10 transition-all duration-300" id="nav-background"></div>
+
+    <!-- Animated Neural Network Lines -->
+    <div class="absolute inset-0 opacity-20 overflow-hidden pointer-events-none">
+      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0" />
+          </linearGradient>
+        </defs>
+        <line x1="0%" y1="50%" x2="100%" y2="50%" stroke="url(#headerGrad)" stroke-width="1">
+          <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite" />
+        </line>
+      </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Logo/Brand Section -->
+        <div class="flex items-center group">
+          <a href="#hero" class="flex items-center gap-4 hover:scale-105 transition-transform duration-300">
+            <!-- Animated Logo -->
+            <div class="relative w-12 h-12">
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl rotate-0 group-hover:rotate-12 transition-all duration-500"></div>
+              <div class="absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500 blur-sm"></div>
+              <div class="relative w-full h-full bg-slate-900 rounded-xl flex items-center justify-center border border-white/20">
+                <svg class="w-6 h-6 text-cyan-400 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+            </div>
+            <!-- Brand Text -->
+            <div class="hidden sm:block">
+              <h1 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
+                {siteConfig.name}
+              </h1>
+              <p class="text-sm text-white/70 font-mono">{siteConfig.title}</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-1" id="desktop-nav">
+          <a
+            href="#about"
+            class="nav-link nav-link-desktop"
+            data-section="about"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            About
+          </a>
+          {hasProjects && (
             <a
               href="#projects"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
+              class="nav-link nav-link-desktop"
+              data-section="projects"
             >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
               Projects
             </a>
-          </li>
-        )
-      }
-      {
-        hasExperience && (
-          <li>
+          )}
+          {hasExperience && (
             <a
               href="#experience"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
+              class="nav-link nav-link-desktop"
+              data-section="experience"
             >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6" />
+              </svg>
               Experience
             </a>
-          </li>
-        )
-      }
-      {
-        hasEducation && (
-          <li>
+          )}
+          {hasEducation && (
             <a
               href="#education"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
+              class="nav-link nav-link-desktop"
+              data-section="education"
             >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+              </svg>
               Education
             </a>
-          </li>
-        )
-      }
-    </ul>
+          )}
+          <!-- Contact CTA -->
+          <a
+            href={`mailto:${siteConfig.social.email}`}
+            class="btn-cta ml-6"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+            Connect
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="lg:hidden p-3 glass-dark rounded-2xl border border-white/20 hover:border-cyan-400/50 transition-all duration-300 group"
+          aria-label="Toggle mobile menu"
+        >
+          <div class="relative w-6 h-6">
+            <!-- Hamburger Lines -->
+            <span class="hamburger-line top-1 group-hover:bg-cyan-400 transition-colors duration-300"></span>
+            <span class="hamburger-line top-2.5 group-hover:bg-cyan-400 transition-colors duration-300"></span>
+            <span class="hamburger-line top-4 group-hover:bg-cyan-400 transition-colors duration-300"></span>
+          </div>
+        </button>
+      </div>
+    </div>
   </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div
+    id="mobile-menu"
+    class="lg:hidden fixed inset-0 top-20 bg-slate-900/95 backdrop-blur-xl transform translate-x-full transition-transform duration-500 ease-out z-40"
+  >
+    <!-- Mobile Menu Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="mobile-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
+            <circle cx="30" cy="30" r="2" fill="#06b6d4" opacity="0.6">
+              <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite" />
+            </circle>
+            <path d="M 0 30 L 60 30 M 30 0 L 30 60" stroke="#8b5cf6" stroke-width="0.5" opacity="0.4"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#mobile-pattern)" />
+      </svg>
+    </div>
+
+    <!-- Mobile Navigation Links -->
+    <nav class="relative p-8">
+      <div class="space-y-6">
+        <!-- Mobile Nav Header -->
+        <div class="pb-6 border-b border-white/10">
+          <h2 class="text-2xl font-bold gradient-text mb-2">Navigation</h2>
+          <p class="text-sm text-white/70 font-mono">Explore my journey</p>
+        </div>
+
+        <!-- Mobile Nav Links -->
+        <div class="space-y-4">
+          <a
+            href="#about"
+            class="nav-link-mobile"
+            data-section="about"
+          >
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xl font-semibold text-white">About</span>
+                <p class="text-sm text-white/60">Who I am</p>
+              </div>
+            </div>
+          </a>
+
+          {hasProjects && (
+            <a
+              href="#projects"
+              class="nav-link-mobile"
+              data-section="projects"
+            >
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="text-xl font-semibold text-white">Projects</span>
+                  <p class="text-sm text-white/60">My work</p>
+                </div>
+              </div>
+            </a>
+          )}
+
+          {hasExperience && (
+            <a
+              href="#experience"
+              class="nav-link-mobile"
+              data-section="experience"
+            >
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="text-xl font-semibold text-white">Experience</span>
+                  <p class="text-sm text-white/60">Career journey</p>
+                </div>
+              </div>
+            </a>
+          )}
+
+          {hasEducation && (
+            <a
+              href="#education"
+              class="nav-link-mobile"
+              data-section="education"
+            >
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="text-xl font-semibold text-white">Education</span>
+                  <p class="text-sm text-white/60">Academic background</p>
+                </div>
+              </div>
+            </a>
+          )}
+        </div>
+
+        <!-- Mobile CTA Section -->
+        <div class="pt-6 border-t border-white/10">
+          <a
+            href={`mailto:${siteConfig.social.email}`}
+            class="btn-cta-mobile w-full"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+            Let's Connect
+          </a>
+
+          <!-- Social Links in Mobile Menu -->
+          <div class="flex justify-center gap-4 mt-6">
+            {siteConfig.social?.linkedin && (
+              <a
+                href={siteConfig.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label="LinkedIn"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 1 0 -4 0M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
+                </svg>
+              </a>
+            )}
+            {siteConfig.social?.github && (
+              <a
+                href={siteConfig.social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label="GitHub"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                </svg>
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
 </header>
 
 <script>
-  window.addEventListener("scroll", () => {
-    const header = document.getElementById("header");
-    if (window.scrollY > 100) {
-      header?.classList.add("bg-white/80", "backdrop-blur-sm");
-    } else {
-      header?.classList.remove("bg-white/80", "backdrop-blur-sm");
+  // Enhanced Header Functionality
+  class EnhancedHeader {
+    constructor() {
+      this.header = document.getElementById('header');
+      this.navBackground = document.getElementById('nav-background');
+      this.mobileMenuButton = document.getElementById('mobile-menu-button');
+      this.mobileMenu = document.getElementById('mobile-menu');
+      this.navLinks = document.querySelectorAll('.nav-link, .nav-link-mobile');
+      this.isMenuOpen = false;
+
+      this.init();
     }
+
+    init() {
+      this.setupScrollHandler();
+      this.setupMobileMenu();
+      this.setupNavLinks();
+      this.setupActiveSection();
+      this.setupHamburgerAnimation();
+    }
+
+    setupScrollHandler() {
+      let lastScroll = 0;
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        const scrollDirection = currentScroll > lastScroll ? 'down' : 'up';
+
+        // Enhanced backdrop blur and styling based on scroll
+        if (currentScroll > 100) {
+          this.navBackground.classList.add('bg-slate-900/95', 'border-white/20');
+          this.navBackground.classList.remove('bg-slate-900/80', 'border-white/10');
+
+          // Add subtle glow effect
+          this.header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(6, 182, 212, 0.1)';
+        } else {
+          this.navBackground.classList.remove('bg-slate-900/95', 'border-white/20');
+          this.navBackground.classList.add('bg-slate-900/80', 'border-white/10');
+          this.header.style.boxShadow = 'none';
+        }
+
+        // Auto-hide header on scroll down (but show on scroll up)
+        if (currentScroll > 500) {
+          if (scrollDirection === 'down' && !this.isMenuOpen) {
+            this.header.style.transform = 'translateY(-100%)';
+          } else if (scrollDirection === 'up') {
+            this.header.style.transform = 'translateY(0)';
+          }
+        } else {
+          this.header.style.transform = 'translateY(0)';
+        }
+
+        lastScroll = currentScroll;
+      });
+    }
+
+    setupMobileMenu() {
+      this.mobileMenuButton.addEventListener('click', () => {
+        this.toggleMobileMenu();
+      });
+
+      // Close menu when clicking outside
+      this.mobileMenu.addEventListener('click', (e) => {
+        if (e.target === this.mobileMenu) {
+          this.closeMobileMenu();
+        }
+      });
+
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.isMenuOpen) {
+          this.closeMobileMenu();
+        }
+      });
+    }
+
+    setupNavLinks() {
+      this.navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+
+          if (targetSection) {
+            // Enhanced smooth scrolling with offset for fixed header
+            const headerHeight = this.header.offsetHeight;
+            const targetPosition = targetSection.offsetTop - headerHeight - 20;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+
+            // Close mobile menu if open
+            if (this.isMenuOpen) {
+              this.closeMobileMenu();
+            }
+          }
+        });
+      });
+    }
+
+    setupActiveSection() {
+      const sections = document.querySelectorAll('section[id]');
+
+      const observerOptions = {
+        rootMargin: '-100px 0px -50% 0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+            this.setActiveNavLink(sectionId);
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    }
+
+    setupHamburgerAnimation() {
+      const hamburgerLines = this.mobileMenuButton.querySelectorAll('.hamburger-line');
+
+      this.mobileMenuButton.addEventListener('click', () => {
+        hamburgerLines.forEach((line, index) => {
+          if (this.isMenuOpen) {
+            // Close animation - return to hamburger
+            line.style.transform = '';
+            line.style.opacity = '1';
+          } else {
+            // Open animation - transform to X
+            if (index === 0) {
+              line.style.transform = 'rotate(45deg) translate(6px, 6px)';
+            } else if (index === 1) {
+              line.style.opacity = '0';
+            } else {
+              line.style.transform = 'rotate(-45deg) translate(6px, -6px)';
+            }
+          }
+        });
+      });
+    }
+
+    toggleMobileMenu() {
+      if (this.isMenuOpen) {
+        this.closeMobileMenu();
+      } else {
+        this.openMobileMenu();
+      }
+    }
+
+    openMobileMenu() {
+      this.isMenuOpen = true;
+      this.mobileMenu.style.transform = 'translateX(0)';
+      this.mobileMenuButton.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+
+      // Animate menu items
+      const menuItems = this.mobileMenu.querySelectorAll('.nav-link-mobile');
+      menuItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.style.opacity = '1';
+          item.style.transform = 'translateX(0)';
+        }, index * 100);
+      });
+    }
+
+    closeMobileMenu() {
+      this.isMenuOpen = false;
+      this.mobileMenu.style.transform = 'translateX(100%)';
+      this.mobileMenuButton.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+
+      // Reset menu items
+      const menuItems = this.mobileMenu.querySelectorAll('.nav-link-mobile');
+      menuItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateX(20px)';
+      });
+    }
+
+    setActiveNavLink(sectionId) {
+      this.navLinks.forEach(link => {
+        const linkSection = link.getAttribute('data-section');
+        if (linkSection === sectionId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  // Initialize enhanced header
+  document.addEventListener('DOMContentLoaded', () => {
+    new EnhancedHeader();
   });
+
+  // Smooth scrolling for all anchor links
+  html {
+    scroll-behavior: smooth;
+  }
 </script>
 
 <style>
-  html {
-    scroll-behavior: smooth;
+  /* Enhanced Navigation Styles */
+  .nav-link {
+    @apply relative px-4 py-2 rounded-xl flex items-center gap-2 text-white/80 font-medium transition-all duration-300 hover:text-white group;
+  }
+
+  .nav-link-desktop {
+    @apply hover:bg-white/10 border border-transparent hover:border-white/20;
+  }
+
+  .nav-link.active {
+    @apply text-cyan-400 bg-cyan-400/10 border-cyan-400/30;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 transform -translate-x-1/2;
+  }
+
+  .nav-link.active::after,
+  .nav-link:hover::after {
+    @apply w-3/4;
+  }
+
+  /* Mobile Navigation Styles */
+  .nav-link-mobile {
+    @apply block p-4 glass-dark rounded-2xl border border-white/10 hover:border-cyan-400/30 transition-all duration-300 opacity-0 transform translate-x-5;
+  }
+
+  .nav-link-mobile:hover {
+    @apply bg-white/5 scale-105;
+  }
+
+  .nav-link-mobile.active {
+    @apply border-cyan-400/50 bg-cyan-400/10;
+  }
+
+  /* Hamburger Menu Styles */
+  .hamburger-line {
+    @apply absolute w-6 h-0.5 bg-white rounded-full transform transition-all duration-300 ease-out;
+  }
+
+  /* CTA Button Styles */
+  .btn-cta {
+    @apply px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl flex items-center gap-2 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300;
+  }
+
+  .btn-cta:hover {
+    @apply from-cyan-400 to-blue-500;
+  }
+
+  .btn-cta-mobile {
+    @apply flex items-center justify-center gap-3 p-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-400 hover:to-blue-500 hover:scale-105 transition-all duration-300;
+  }
+
+  /* Social Links */
+  .social-link {
+    @apply p-3 glass-dark rounded-xl border border-white/10 text-white/70 hover:text-cyan-400 hover:border-cyan-400/30 hover:scale-110 transition-all duration-300;
+  }
+
+  /* Glass Morphism Enhancement */
+  .glass-dark {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .nav-link-mobile {
+      animation: slideInFromRight 0.6s ease-out forwards;
+    }
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Enhanced focus states for accessibility */
+  .nav-link:focus-visible,
+  .btn-cta:focus-visible,
+  .social-link:focus-visible {
+    @apply outline-2 outline-cyan-400 outline-offset-2;
+  }
+
+  /* Neon glow effects */
+  .nav-link.active,
+  .btn-cta:hover {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
   }
 </style>

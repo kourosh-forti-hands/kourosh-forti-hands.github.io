@@ -1,26 +1,195 @@
 ---
 import { siteConfig } from "../config";
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+
+// Function to get project category color - Dark Theme Enhanced
+function getProjectColor(skills) {
+  if (skills.some(skill => skill.includes('AI') || skill.includes('LLM') || skill.includes('RAG') || skill.includes('Bedrock') || skill.includes('Agentic'))) {
+    return {
+      gradient: "from-blue-500 to-purple-600",
+      bg: "from-slate-900/90 to-blue-900/90",
+      border: "border-blue-400/30",
+      icon: "text-blue-400",
+      glowColor: "blue-400",
+      accentColor: "from-blue-400 to-cyan-400",
+      category: "AI/ML"
+    };
+  } else if (skills.some(skill => skill.includes('AWS') || skill.includes('Cloud') || skill.includes('Terraform'))) {
+    return {
+      gradient: "from-purple-500 to-pink-600",
+      bg: "from-slate-900/90 to-purple-900/90",
+      border: "border-purple-400/30",
+      icon: "text-purple-400",
+      glowColor: "purple-400",
+      accentColor: "from-purple-400 to-pink-400",
+      category: "Cloud"
+    };
+  } else if (skills.some(skill => skill.includes('Python') || skill.includes('React') || skill.includes('FastAPI') || skill.includes('Streamlit'))) {
+    return {
+      gradient: "from-green-500 to-emerald-600",
+      bg: "from-slate-900/90 to-green-900/90",
+      border: "border-green-400/30",
+      icon: "text-green-400",
+      glowColor: "green-400",
+      accentColor: "from-green-400 to-emerald-400",
+      category: "Development"
+    };
+  } else if (skills.some(skill => skill.includes('Security') || skill.includes('Compliance'))) {
+    return {
+      gradient: "from-red-500 to-orange-600",
+      bg: "from-slate-900/90 to-red-900/90",
+      border: "border-red-400/30",
+      icon: "text-red-400",
+      glowColor: "red-400",
+      accentColor: "from-red-400 to-orange-400",
+      category: "Security"
+    };
+  } else {
+    return {
+      gradient: "from-slate-500 to-gray-600",
+      bg: "from-slate-900/90 to-gray-900/90",
+      border: "border-slate-400/30",
+      icon: "text-slate-400",
+      glowColor: "slate-400",
+      accentColor: "from-slate-400 to-gray-400",
+      category: "Other"
+    };
+  }
+}
 ---
 
 {
   hasProjects && (
-    <section id="projects" class="p-8 sm:p-12 md:p-16 lg:p-24">
-      <div>
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-          <div class="lg:col-span-4">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
-              Projects
-            </h2>
-            <div
-              class="w-[75px] h-[5px] mt-2 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
-            />
+    <section id="projects" class="relative py-24 lg:py-32 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0">
+        <!-- Animated Neural Network Grid -->
+        <div class="absolute inset-0 opacity-15">
+          <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="projectGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0" />
+              </linearGradient>
+              <linearGradient id="projectGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#f5576c;stop-opacity:0" />
+              </linearGradient>
+              <pattern id="project-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+                <circle cx="40" cy="40" r="2" fill="url(#projectGrad1)" opacity="0.6">
+                  <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite" />
+                </circle>
+                <path d="M 0 40 L 80 40 M 40 0 L 40 80" stroke="url(#projectGrad2)" stroke-width="0.5" opacity="0.3"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#project-grid)" />
+            <!-- Animated connection lines -->
+            <g opacity="0.4">
+              <line x1="0%" y1="25%" x2="100%" y2="75%" stroke="url(#projectGrad1)" stroke-width="1">
+                <animate attributeName="opacity" values="0.2;0.8;0.2" dur="5s" repeatCount="indefinite" />
+              </line>
+              <line x1="100%" y1="25%" x2="0%" y2="75%" stroke="url(#projectGrad2)" stroke-width="1">
+                <animate attributeName="opacity" values="0.8;0.2;0.8" dur="4s" repeatCount="indefinite" />
+              </line>
+            </g>
+          </svg>
+        </div>
+
+        <!-- 3D Floating Tech Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute top-20 right-20 w-32 h-32 transform-3d">
+            <div class="w-full h-full bg-gradient-to-r from-blue-400/20 to-purple-500/20 rounded-2xl rotate-45 float stagger-1"></div>
+          </div>
+          <div class="absolute bottom-20 left-20 w-24 h-24 transform-3d">
+            <div class="w-full h-full bg-gradient-to-r from-green-400/20 to-cyan-500/20 rounded-full float stagger-2"></div>
+          </div>
+          <div class="absolute top-1/2 left-1/4 w-16 h-16 transform-3d">
+            <div class="w-full h-full bg-gradient-to-r from-pink-400/20 to-red-500/20 rounded-lg rotate-12 float stagger-3"></div>
+          </div>
+        </div>
+
+        <!-- Massive Gradient Orbs with Animation -->
+        <div class="absolute inset-0">
+          <div class="absolute top-1/4 -left-1/4 w-96 h-96 bg-gradient-to-br from-blue-600/20 to-purple-800/20 rounded-full blur-3xl animate-pulse float stagger-1"></div>
+          <div class="absolute bottom-1/4 -right-1/4 w-80 h-80 bg-gradient-to-br from-pink-600/20 to-red-800/20 rounded-full blur-3xl animate-pulse float stagger-2"></div>
+          <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-cyan-600/15 to-blue-800/15 rounded-full blur-3xl animate-pulse float stagger-3"></div>
+        </div>
+
+        <!-- AI Code Matrix -->
+        <div class="absolute inset-0 opacity-5">
+          <div class="project-matrix">
+            <span style="animation-delay: 0s;">{ AI: true }</span>
+            <span style="animation-delay: 3s;">class Agent()</span>
+            <span style="animation-delay: 6s;">def automate()</span>
+            <span style="animation-delay: 1.5s;">if intelligence</span>
+            <span style="animation-delay: 4.5s;">return success</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-24 relative">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <!-- Title Section -->
+          <div class="lg:col-span-4 scroll-animate">
+            <div class="sticky top-32">
+              <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+                <span class="gradient-text">Featured</span><br />
+                <span class="text-white">Projects</span>
+              </h2>
+
+              <div class="relative mb-8">
+                <div class="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                <div class="w-12 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 ml-8"></div>
+              </div>
+
+              <!-- Projects Stats with Dark Theme -->
+              <div class="glass-dark rounded-2xl p-6 border border-white/10 mb-8">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-sm font-mono text-white/70">project.portfolio</span>
+                  <div class="flex gap-1">
+                    <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse neon-glow"></div>
+                    <div class="w-3 h-3 bg-blue-400 rounded-full animate-pulse neon-glow" style="animation-delay: 0.5s"></div>
+                  </div>
+                </div>
+                <p class="text-2xl font-bold gradient-text-tech mb-1">{siteConfig.projects.length} Innovation Projects</p>
+                <p class="text-sm text-white/70 font-mono">Showcasing AI & enterprise solutions</p>
+              </div>
+
+              <!-- Project Categories -->
+              <div class="glass-dark rounded-2xl p-6 border border-white/10">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-semibold text-white">Project Types</h3>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-white/80">AI/ML Systems</span>
+                    <div class="flex items-center gap-2">
+                      <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                      <span class="text-xs text-blue-400 font-mono">3 projects</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-white/80">Cloud Infrastructure</span>
+                    <div class="flex items-center gap-2">
+                      <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style="animation-delay: 0.3s"></div>
+                      <span class="text-xs text-purple-400 font-mono">2 projects</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
+          <!-- Projects Grid -->
           <div class="lg:col-span-8">
             <div class="space-y-8">
               {siteConfig.projects.map((project, index) => {
+                const projectColor = getProjectColor(project.skills);
                 const Component = project.link ? "a" : "div";
                 const linkProps = project.link
                   ? {
@@ -31,65 +200,137 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                   : {};
 
                 return (
-                  <div class="group relative">
+                  <div
+                    class="scroll-animate project-card"
+                    style={`animation-delay: ${index * 0.2}s`}
+                  >
                     <Component
                       {...linkProps}
-                      class={`block relative p-4 sm:p-6 md:p-8 bg-gray-50 rounded-xl sm:rounded-2xl border border-gray-200 transition-all duration-300 ${
-                        project.link
-                          ? "hover:bg-white hover:shadow-xl hover:border-gray-300 hover:-translate-y-1"
-                          : ""
+                      class={`card-3d group relative block overflow-hidden rounded-3xl bg-gradient-to-br ${projectColor.bg} backdrop-blur-sm border ${projectColor.border} transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 ${
+                        project.link ? "cursor-pointer" : ""
                       }`}
                     >
-                      {project.link && (
-                        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center bg-gray-900 rounded-full text-white transition-all duration-300 group-hover:bg-gray-700">
-                          <svg
-                            class="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M7 17L17 7M17 7H7M17 7V17"
-                            />
-                          </svg>
-                        </div>
-                      )}
-
-                      <div class="space-y-4">
-                        <div>
-                          <span
-                            class="text-sm font-mono"
-                            style={{ color: siteConfig.accentColor }}
-                          >
-                            0{index + 1}
-                          </span>
-                          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mt-1">
-                            {project.name}
-                          </h3>
+                      <!-- 3D Project Card -->
+                      <div class="relative p-8">
+                        <!-- Project Status Indicator -->
+                        <div class="absolute -top-3 -right-3 flex items-center gap-2">
+                          <div class={`w-16 h-16 bg-gradient-to-br ${projectColor.gradient} rounded-2xl flex items-center justify-center text-white font-bold text-lg rotate-12 group-hover:rotate-0 transition-all duration-300 shadow-lg`}>
+                            {String(index + 1).padStart(2, '0')}
+                          </div>
+                          <div class="w-4 h-4 bg-green-400 rounded-full animate-pulse opacity-80"></div>
                         </div>
 
-                        <p
-                          class={`text-base sm:text-lg text-gray-600 leading-relaxed ${project.link ? "pr-12 sm:pr-14 md:pr-16" : ""}`}
-                        >
+                        <!-- Category Badge & Icon -->
+                        <div class="flex items-center gap-4 mb-8">
+                          <div class={`w-20 h-20 rounded-3xl bg-gradient-to-br ${projectColor.gradient} p-1 group-hover:scale-110 transition-transform duration-300 shadow-xl`}>
+                            <div class="w-full h-full bg-slate-900 rounded-3xl flex items-center justify-center border border-white/20">
+                              {project.skills.some(skill => skill.includes('AI') || skill.includes('LLM') || skill.includes('RAG') || skill.includes('Agentic')) ? (
+                                <svg class="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                              ) : project.skills.some(skill => skill.includes('Cloud') || skill.includes('AWS') || skill.includes('Terraform')) ? (
+                                <svg class="w-10 h-10 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                                </svg>
+                              ) : project.skills.some(skill => skill.includes('Security') || skill.includes('Compliance')) ? (
+                                <svg class="w-10 h-10 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                              ) : project.skills.some(skill => skill.includes('Python') || skill.includes('React') || skill.includes('FastAPI')) ? (
+                                <svg class="w-10 h-10 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                </svg>
+                              ) : (
+                                <svg class="w-10 h-10 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                              )}
+                            </div>
+                          </div>
+                          <div class="flex-1">
+                            <div class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${projectColor.accentColor} text-white border border-white/20`}>
+                              {projectColor.category}
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Project Title with Dark Theme -->
+                        <h3 class="text-3xl sm:text-4xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                          {project.name}
+                        </h3>
+
+                        <!-- Project Description with Dark Theme -->
+                        <p class="text-lg text-white/80 leading-relaxed mb-8">
                           {project.description}
                         </p>
 
+                        <!-- Enhanced Tech Stack -->
                         {project.skills && project.skills.length > 0 && (
-                          <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
-                            {project.skills.map((skill) => (
-                              <span
-                                class={`px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gray-900 text-white rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${
-                                  project.link ? "group-hover:bg-gray-800" : ""
-                                }`}
-                              >
-                                {skill}
-                              </span>
-                            ))}
+                          <div class="mb-8">
+                            <div class="flex items-center gap-2 mb-4">
+                              <div class="w-6 h-6 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
+                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                </svg>
+                              </div>
+                              <span class="text-sm font-semibold text-white/70">Tech Stack</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                              {project.skills.map((skill) => (
+                                <span class="group/skill relative">
+                                  <span class="px-4 py-2 glass-dark rounded-xl text-sm font-medium text-white border border-white/20 hover:border-cyan-400/50 transition-all duration-300 group-hover/skill:bg-white/10 group-hover/skill:scale-105">
+                                    {skill}
+                                  </span>
+                                </span>
+                              ))}
+                            </div>
                           </div>
                         )}
+
+                        <!-- Enhanced Link/CTA Section */
+                        {project.link ? (
+                          <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3 text-cyan-400 font-semibold group-hover:gap-4 transition-all duration-300">
+                              <div class="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                              </div>
+                              <span class="text-lg">View Live Project</span>
+                            </div>
+                          </div>
+                        ) : (
+                          <div class="flex items-center gap-3 text-white/60">
+                            <div class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center border border-white/20">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                              </svg>
+                            </div>
+                            <span class="text-sm">Enterprise Project</span>
+                          </div>
+                        )}
+
+                        <!-- Enhanced Decorative Elements -->
+                        <div class="absolute top-8 right-8 opacity-30 group-hover:opacity-60 transition-opacity duration-300">
+                          <div class="flex flex-col gap-2">
+                            <div class="flex gap-1">
+                              <div class={`w-3 h-3 bg-gradient-to-r ${projectColor.accentColor} rounded-full animate-pulse`}></div>
+                              <div class={`w-3 h-3 bg-gradient-to-r ${projectColor.accentColor} rounded-full animate-pulse`} style="animation-delay: 0.5s"></div>
+                            </div>
+                            <div class="flex gap-1">
+                              <div class={`w-3 h-3 bg-gradient-to-r ${projectColor.accentColor} rounded-full animate-pulse`} style="animation-delay: 1s"></div>
+                              <div class={`w-3 h-3 bg-gradient-to-r ${projectColor.accentColor} rounded-full animate-pulse`} style="animation-delay: 1.5s"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 3D Glow Effect -->
+                        <div class={`absolute inset-0 bg-gradient-to-r ${projectColor.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-3xl blur-xl`}></div>
+
+                        <!-- Scan line effect -->
+                        <div class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700">
+                          <div class="scan-line bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"></div>
+                        </div>
                       </div>
                     </Component>
                   </div>
@@ -102,3 +343,150 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
     </section>
   )
 }
+
+<style>
+  @keyframes projectMatrixFall {
+    0% {
+      transform: translateY(-100vh) rotateZ(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotateZ(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes scanLine {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes projectGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 40px rgba(147, 51, 234, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.6), 0 0 60px rgba(147, 51, 234, 0.4);
+    }
+  }
+
+  @keyframes cardFloat3D {
+    0%, 100% {
+      transform: perspective(1000px) rotateX(-1deg) rotateY(1deg) translateY(0px);
+    }
+    50% {
+      transform: perspective(1000px) rotateX(-1deg) rotateY(1deg) translateY(-10px);
+    }
+  }
+
+  .project-matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .project-matrix span {
+    position: absolute;
+    top: -20px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: #00ff41;
+    animation: projectMatrixFall 12s linear infinite;
+    opacity: 0.7;
+    text-shadow: 0 0 5px #00ff41;
+  }
+
+  .project-matrix span:nth-child(1) { left: 10%; animation-duration: 8s; }
+  .project-matrix span:nth-child(2) { left: 30%; animation-duration: 10s; }
+  .project-matrix span:nth-child(3) { left: 50%; animation-duration: 7s; }
+  .project-matrix span:nth-child(4) { left: 70%; animation-duration: 9s; }
+  .project-matrix span:nth-child(5) { left: 85%; animation-duration: 11s; }
+
+  .project-card {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .project-card .card-3d {
+    animation: cardFloat3D 8s ease-in-out infinite;
+    animation-delay: calc(var(--index) * 0.5s);
+  }
+
+  .project-card:hover .card-3d {
+    transform: perspective(1000px) rotateX(-5deg) rotateY(5deg) translateY(-15px);
+    animation: projectGlow 2s ease-in-out infinite;
+  }
+
+  .scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    animation: scanLine 2s ease-in-out;
+    filter: blur(1px);
+  }
+
+  /* Enhanced 3D hover effects */
+  .card-3d {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  .card-3d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+    transform: translateX(-100%);
+  }
+
+  .card-3d:hover::before {
+    opacity: 1;
+    animation: scanLine 1.5s ease-in-out;
+  }
+
+  /* Floating animation staggering */
+  .float.stagger-1 {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: -2s;
+  }
+
+  .float.stagger-2 {
+    animation: float 7s ease-in-out infinite;
+    animation-delay: -4s;
+  }
+
+  .float.stagger-3 {
+    animation: float 8s ease-in-out infinite;
+    animation-delay: -1s;
+  }
+
+  /* Project category enhancements */
+  .group/skill:hover span {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%);
+    border-color: rgba(6, 182, 212, 0.8);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+  }
+</style>
