@@ -4,43 +4,58 @@ import { siteConfig } from "../config";
 
 <section
   id="hero"
-  class="min-h-screen flex items-center bg-white py-16"
+  class="min-h-screen flex items-center relative overflow-hidden"
+  style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background: #ffffff;"
 >
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl">
-      <!-- Simple greeting -->
-      <p class="text-lg text-gray-600 mb-4">
-        Hello, I'm
-      </p>
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-70"></div>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-3xl animate-fadeIn">
+      <!-- Greeting with animation -->
+      <div class="inline-block">
+        <p class="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-6">
+          Welcome to my portfolio
+        </p>
+      </div>
 
-      <!-- Name with simple styling -->
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-        {siteConfig.name}
+      <!-- Name with gradient effect -->
+      <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-6">
+        <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          {siteConfig.name}
+        </span>
       </h1>
 
-      <!-- Title -->
-      <h2 class="text-2xl sm:text-3xl font-semibold text-blue-600 mb-6">
+      <!-- Title with better styling -->
+      <h2 class="text-2xl sm:text-3xl font-medium text-gray-700 mb-8">
         {siteConfig.title}
+        <span class="inline-block ml-3 px-3 py-1 text-xs font-semibold bg-green-100 text-green-800 rounded-full uppercase tracking-wide">
+          Available for hire
+        </span>
       </h2>
 
-      <!-- About description -->
-      <p class="text-lg text-gray-700 mb-8 max-w-2xl leading-relaxed">
+      <!-- About description with better typography -->
+      <p class="text-lg text-gray-600 mb-10 max-w-2xl leading-relaxed">
         {siteConfig.aboutMe}
       </p>
 
-      <!-- Simple CTA buttons -->
+      <!-- Enhanced CTA buttons -->
       <div class="flex flex-col sm:flex-row gap-4 mb-12">
         <a
           href="#projects"
-          class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+          class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-xl text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transform transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
         >
-          View My Work
+          <span>View My Work</span>
+          <svg width="20" height="20" class="ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
         </a>
         <a
           href={`mailto:${siteConfig.social.email}`}
-          class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200"
+          class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-xl text-gray-700 bg-white border-2 border-gray-200 hover:border-blue-500 hover:text-blue-600 transform transition-all duration-200 hover:scale-105 shadow-md hover:shadow-lg"
         >
-          Get In Touch
+          <svg width="20" height="20" class="mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span>Get In Touch</span>
         </a>
       </div>
 
