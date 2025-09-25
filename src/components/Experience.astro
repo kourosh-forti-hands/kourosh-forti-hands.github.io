@@ -1,550 +1,77 @@
 ---
 import { siteConfig } from "../config";
 const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
-
-// Function to get company type color - Enhanced Dark Theme
-function getCompanyColor(company, title) {
-  if (title.includes('AI Engineer') || company.includes('AI')) {
-    return {
-      gradient: "from-blue-500 to-purple-600",
-      bg: "from-slate-900/95 to-blue-900/95",
-      border: "border-blue-400/30",
-      icon: "text-blue-400",
-      dot: "bg-gradient-to-r from-blue-500 to-purple-600",
-      glowColor: "blue-400",
-      accentColor: "from-blue-400 to-cyan-400",
-      category: "AI/ML"
-    };
-  } else if (title.includes('Cloud') || company.includes('Cloud')) {
-    return {
-      gradient: "from-purple-500 to-pink-600",
-      bg: "from-slate-900/95 to-purple-900/95",
-      border: "border-purple-400/30",
-      icon: "text-purple-400",
-      dot: "bg-gradient-to-r from-purple-500 to-pink-600",
-      glowColor: "purple-400",
-      accentColor: "from-purple-400 to-pink-400",
-      category: "Cloud"
-    };
-  } else if (title.includes('Network') || title.includes('Engineer')) {
-    return {
-      gradient: "from-green-500 to-emerald-600",
-      bg: "from-slate-900/95 to-green-900/95",
-      border: "border-green-400/30",
-      icon: "text-green-400",
-      dot: "bg-gradient-to-r from-green-500 to-emerald-600",
-      glowColor: "green-400",
-      accentColor: "from-green-400 to-emerald-400",
-      category: "Tech"
-    };
-  } else if (title.includes('Security') || title.includes('Intern')) {
-    return {
-      gradient: "from-orange-500 to-red-600",
-      bg: "from-slate-900/95 to-orange-900/95",
-      border: "border-orange-400/30",
-      icon: "text-orange-400",
-      dot: "bg-gradient-to-r from-orange-500 to-red-600",
-      glowColor: "orange-400",
-      accentColor: "from-orange-400 to-red-400",
-      category: "Security"
-    };
-  } else {
-    return {
-      gradient: "from-slate-500 to-gray-600",
-      bg: "from-slate-900/95 to-gray-900/95",
-      border: "border-slate-400/30",
-      icon: "text-slate-400",
-      dot: "bg-gradient-to-r from-slate-500 to-gray-600",
-      glowColor: "slate-400",
-      accentColor: "from-slate-400 to-gray-400",
-      category: "Other"
-    };
-  }
-}
 ---
 
 {
   hasExperience && (
-    <section id="experience" class="relative py-24 lg:py-32 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
-      <!-- Enhanced Background Elements -->
-      <div class="absolute inset-0">
-        <!-- Neural Network Circuit Pattern -->
-        <div class="absolute inset-0 opacity-20">
-          <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="experienceGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#667eea" stop-opacity="1" />
-                <stop offset="100%" stop-color="#764ba2" stop-opacity="0" />
-              </linearGradient>
-              <linearGradient id="experienceGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#f093fb" stop-opacity="1" />
-                <stop offset="100%" stop-color="#f5576c" stop-opacity="0" />
-              </linearGradient>
-              <pattern id="experience-circuit" width="100" height="100" patternUnits="userSpaceOnUse">
-                <circle cx="50" cy="50" r="3" fill="url(#experienceGrad1)" opacity="0.8">
-                  <animate attributeName="r" values="3;6;3" dur="4s" repeatCount="indefinite"></animate>
-                </circle>
-                <path d="M 0 50 L 100 50 M 50 0 L 50 100" stroke="url(#experienceGrad2)" stroke-width="0.5" opacity="0.4"/>
-                <path d="M 20 20 L 80 80 M 80 20 L 20 80" stroke="url(#experienceGrad1)" stroke-width="0.3" opacity="0.3"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#experience-circuit)" />
-          </svg>
+    <section id="experience" class="py-16 lg:py-20 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+            Work Experience
+          </h2>
+          <div class="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            My professional journey in AI engineering, cloud services, and network architecture.
+          </p>
         </div>
 
-        <!-- Animated Connection Lines -->
-        <svg class="absolute inset-0 w-full h-full opacity-25" xmlns="http://www.w3.org/2000/svg">
-          <g class="experience-lines">
-            <line x1="15%" y1="30%" x2="85%" y2="70%" stroke="url(#experienceGrad1)" stroke-width="2">
-              <animate attributeName="opacity" values="0.4;0.9;0.4" dur="5s" repeatCount="indefinite"></animate>
-            </line>
-            <line x1="85%" y1="20%" x2="15%" y2="80%" stroke="url(#experienceGrad2)" stroke-width="2">
-              <animate attributeName="opacity" values="0.9;0.4;0.9" dur="4s" repeatCount="indefinite"></animate>
-            </line>
-            <line x1="30%" y1="10%" x2="70%" y2="90%" stroke="url(#experienceGrad1)" stroke-width="1">
-              <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"></animate>
-            </line>
-          </g>
-        </svg>
+        <!-- Experience Timeline -->
+        <div class="relative">
+          <!-- Timeline line -->
+          <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-300 transform md:-translate-x-0.5"></div>
 
-        <!-- Enhanced Floating Tech Elements -->
-        <div class="absolute inset-0 overflow-hidden">
-          <div class="absolute top-20 right-20 w-48 h-48 transform-3d">
-            <div class="w-full h-full bg-gradient-to-r from-blue-400/20 to-purple-500/20 rounded-3xl rotate-45 float stagger-1 blur-xl"></div>
-          </div>
-          <div class="absolute bottom-20 left-20 w-32 h-32 transform-3d">
-            <div class="w-full h-full bg-gradient-to-r from-green-400/20 to-cyan-500/20 rounded-2xl float stagger-2 blur-2xl"></div>
-          </div>
-          <div class="absolute top-1/2 right-1/4 w-24 h-24 transform-3d">
-            <div class="w-full h-full bg-gradient-to-r from-pink-400/20 to-red-500/20 rounded-full rotate-12 float stagger-3 blur-xl"></div>
-          </div>
-          <div class="absolute bottom-1/4 left-1/2 w-40 h-40 transform-3d">
-            <div class="w-full h-full bg-gradient-to-r from-purple-400/15 to-blue-500/15 rounded-2xl rotate-45 float stagger-1 blur-3xl"></div>
-          </div>
-        </div>
+          <div class="space-y-8">
+            {siteConfig.experience.map((job, index) => (
+              <div class={`relative flex items-start ${
+                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+              }`}>
+                <!-- Timeline dot -->
+                <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-blue-600 rounded-full transform -translate-x-1/2 md:translate-x-0 border-4 border-white shadow-md z-10"></div>
 
-        <!-- Career Progression Matrix -->
-        <div class="absolute inset-0 opacity-8">
-          <div class="experience-matrix">
-            <span style={{animationDelay: "0s"}}>experience++</span>
-            <span style={{animationDelay: "3s"}}>skills.push(AI)</span>
-            <span style={{animationDelay: "6s"}}>level.up()</span>
-            <span style={{animationDelay: "1.5s"}}>while(learning)</span>
-            <span style={{animationDelay: "4.5s"}}>engineer.evolve()</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-24 relative">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <!-- Enhanced Title Section -->
-          <div class="lg:col-span-4 scroll-animate">
-            <div class="sticky top-32">
-              <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-                <span class="gradient-text">Career</span><br />
-                <span class="text-white">Evolution</span>
-              </h2>
-
-              <div class="relative mb-8">
-                <div class="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full neon-glow"></div>
-                <div class="w-12 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 ml-8 opacity-80"></div>
-              </div>
-
-              <!-- Enhanced Career Stats -->
-              <div class="glass-dark rounded-3xl p-8 border border-white/20 mb-8 backdrop-blur-xl">
-                <div class="flex items-center justify-between mb-6">
-                  <span class="text-sm font-mono text-white/70">career.timeline.status</span>
-                  <div class="flex gap-2">
-                    <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse neon-glow"></div>
-                    <div class="w-3 h-3 bg-blue-400 rounded-full animate-pulse neon-glow" style={{animationDelay: "0.5s"}}></div>
-                    <div class="w-3 h-3 bg-purple-400 rounded-full animate-pulse neon-glow" style={{animationDelay: "1s"}}></div>
-                  </div>
-                </div>
-                <div class="space-y-4">
-                  <div>
-                    <p class="text-3xl font-bold gradient-text-tech mb-2">7+ Years</p>
-                    <p class="text-sm text-white/80 font-mono">Network → Cloud → AI Evolution</p>
-                  </div>
-                  <div class="grid grid-cols-2 gap-4 mt-6">
-                    <div class="text-center p-3 rounded-xl bg-blue-500/10 border border-blue-400/20">
-                      <div class="text-2xl font-bold text-blue-400">3</div>
-                      <div class="text-xs text-white/70 font-mono">AI Projects</div>
-                    </div>
-                    <div class="text-center p-3 rounded-xl bg-purple-500/10 border border-purple-400/20">
-                      <div class="text-2xl font-bold text-purple-400">$5M+</div>
-                      <div class="text-xs text-white/70 font-mono">Revenue Impact</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Enhanced Timeline Legend -->
-              <div class="glass-dark rounded-2xl p-6 border border-white/10">
-                <div class="flex items-center gap-3 mb-6">
-                  <div class="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
-                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <h3 class="text-lg font-semibold text-white">Expertise Areas</h3>
-                </div>
-                <div class="space-y-4">
-                  <div class="flex items-center justify-between group">
-                    <div class="flex items-center gap-3">
-                      <div class="w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse"></div>
-                      <span class="text-sm text-white/90 group-hover:text-blue-400 transition-colors">AI & Machine Learning</span>
-                    </div>
-                    <div class="text-xs text-blue-400 font-mono opacity-80">Current</div>
-                  </div>
-                  <div class="flex items-center justify-between group">
-                    <div class="flex items-center gap-3">
-                      <div class="w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full animate-pulse" style={{animationDelay: "0.3s"}}></div>
-                      <span class="text-sm text-white/90 group-hover:text-purple-400 transition-colors">Cloud & Infrastructure</span>
-                    </div>
-                    <div class="text-xs text-purple-400 font-mono opacity-80">4 Years</div>
-                  </div>
-                  <div class="flex items-center justify-between group">
-                    <div class="flex items-center gap-3">
-                      <div class="w-4 h-4 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full animate-pulse" style={{animationDelay: "0.6s"}}></div>
-                      <span class="text-sm text-white/90 group-hover:text-green-400 transition-colors">Network & Security</span>
-                    </div>
-                    <div class="text-xs text-green-400 font-mono opacity-80">Foundation</div>
-                  </div>
-                  <div class="flex items-center justify-between group">
-                    <div class="flex items-center gap-3">
-                      <div class="w-4 h-4 bg-gradient-to-r from-orange-500 to-red-600 rounded-full animate-pulse" style={{animationDelay: "0.9s"}}></div>
-                      <span class="text-sm text-white/90 group-hover:text-orange-400 transition-colors">Security & Compliance</span>
-                    </div>
-                    <div class="text-xs text-orange-400 font-mono opacity-80">Specialized</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Enhanced Experience Timeline -->
-          <div class="lg:col-span-8">
-            <div class="relative">
-              <!-- Enhanced Timeline Line with Glow -->
-              <div class="absolute left-8 top-8 bottom-8 w-1 bg-gradient-to-b from-blue-500 via-purple-500 via-green-500 to-orange-500 opacity-40 rounded-full shadow-lg">
-                <div class="absolute inset-0 bg-gradient-to-b from-blue-500 via-purple-500 via-green-500 to-orange-500 rounded-full blur-sm opacity-60"></div>
-              </div>
-
-              <div class="space-y-16">
-                {siteConfig.experience.map((exp, index) => {
-                  const companyColor = getCompanyColor(exp.company, exp.title);
-                  return (
-                    <div
-                      class="relative scroll-animate timeline-item group"
-                      style={`animation-delay: ${index * 0.2}s`}
-                    >
-                      <!-- Enhanced Timeline Dot with 3D Effect -->
-                      <div class={`absolute left-5 top-10 w-8 h-8 ${companyColor.dot} rounded-full border-4 border-slate-800 shadow-2xl z-20 timeline-dot transition-all duration-500 group-hover:scale-150`}>
-                        <div class={`absolute inset-0 ${companyColor.dot} rounded-full animate-ping opacity-30`}></div>
-                        <div class={`absolute inset-1 bg-white rounded-full opacity-20`}></div>
-                        <div class="absolute inset-0 rounded-full" style={`box-shadow: 0 0 20px rgba(${companyColor.glowColor === 'blue-400' ? '59, 130, 246' : companyColor.glowColor === 'purple-400' ? '147, 51, 234' : companyColor.glowColor === 'green-400' ? '34, 197, 94' : '251, 146, 60'}, 0.6)`}></div>
+                <!-- Content card -->
+                <div class={`bg-white rounded-lg shadow-md border p-6 ml-16 md:ml-0 ${
+                  index % 2 === 0
+                    ? 'md:mr-8 md:w-5/12'
+                    : 'md:ml-8 md:w-5/12'
+                } card-hover`}>
+                  <!-- Company and Title -->
+                  <div class="mb-4">
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">
+                      {job.title}
+                    </h3>
+                    <div class="flex items-center gap-2 mb-2">
+                      <div class="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
                       </div>
-
-                      <!-- Enhanced Experience Card -->
-                      <div class="ml-20">
-                        <div class={`card-3d glass-dark bg-gradient-to-br ${companyColor.bg} backdrop-blur-xl border ${companyColor.border} p-10 relative overflow-hidden rounded-3xl hover:shadow-2xl transition-all duration-700`}>
-
-                          <!-- Enhanced Company Badge -->
-                          <div class={`absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br ${companyColor.gradient} rounded-3xl flex items-center justify-center rotate-12 group-hover:rotate-0 transition-all duration-500 shadow-xl`}>
-                            <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl"></div>
-                            <div class="text-white text-sm font-bold text-center leading-tight z-10">
-                              {exp.company.split(' ')[0]}
-                            </div>
-                            <div class={`absolute -inset-2 bg-gradient-to-br ${companyColor.gradient} rounded-3xl opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500`}></div>
-                          </div>
-
-                          <!-- Category Badge -->
-                          <div class="absolute top-6 right-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                            <div class={`px-4 py-2 bg-gradient-to-r ${companyColor.accentColor} rounded-full text-xs font-semibold text-white border border-white/20 backdrop-blur-sm`}>
-                              {companyColor.category}
-                            </div>
-                          </div>
-
-                          <!-- Enhanced Role Header -->
-                          <div class="mb-8">
-                            <div class="flex items-start justify-between mb-6">
-                              <div class="flex-1">
-                                <h3 class="text-3xl sm:text-4xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-500">
-                                  {exp.title}
-                                </h3>
-                                <div class="flex items-center gap-4 mb-4">
-                                  <div class={`w-12 h-12 rounded-2xl bg-gradient-to-br ${companyColor.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300`}>
-                                    {exp.title.includes('AI') ? (
-                                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                      </svg>
-                                    ) : exp.title.includes('Cloud') ? (
-                                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                                      </svg>
-                                    ) : exp.title.includes('Network') ? (
-                                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9 3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                                      </svg>
-                                    ) : exp.title.includes('Security') || exp.title.includes('Intern') ? (
-                                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                      </svg>
-                                    ) : (
-                                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6" />
-                                      </svg>
-                                    )}
-                                  </div>
-                                  <div>
-                                    <p class={`text-2xl font-bold ${companyColor.icon} group-hover:text-white transition-colors duration-300`}>
-                                      {exp.company}
-                                    </p>
-                                    {index === 0 && (
-                                      <div class="flex items-center gap-2 mt-1">
-                                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                                        <span class="text-sm text-green-400 font-mono">Current Position</span>
-                                      </div>
-                                    )}
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!-- Enhanced Date Range -->
-                            <div class="flex items-center gap-4 mb-2">
-                              <div class={`inline-flex items-center gap-3 px-6 py-3 glass-dark backdrop-blur-sm rounded-2xl text-sm font-medium text-white border ${companyColor.border} group-hover:border-cyan-400/50 transition-colors duration-300`}>
-                                <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                </svg>
-                                <span class="text-lg">{exp.dateRange}</span>
-                              </div>
-                              {index === 0 && (
-                                <div class="px-4 py-2 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-full border border-green-400/30">
-                                  <span class="text-sm text-green-400 font-semibold">Latest Role</span>
-                                </div>
-                              )}
-                            </div>
-                          </div>
-
-                          <!-- Enhanced Achievements List -->
-                          <div class="space-y-6">
-                            {exp.bullets.map((bullet, bulletIndex) => (
-                              <div
-                                class="flex items-start gap-4 achievement-item"
-                                style={`animation-delay: ${(index * 0.2) + (bulletIndex * 0.1)}s`}
-                              >
-                                <div class={`mt-2 w-8 h-8 rounded-xl bg-gradient-to-br ${companyColor.gradient} flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-all duration-300`}>
-                                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                  </svg>
-                                </div>
-                                <p class="text-white/90 leading-relaxed flex-1 group-hover:text-white transition-colors duration-300 text-lg">
-                                  {bullet}
-                                </p>
-                              </div>
-                            ))}
-                          </div>
-
-                          <!-- Enhanced Decorative Elements -->
-                          <div class="absolute top-8 right-8 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-                            <div class="flex flex-col gap-2">
-                              <div class="flex gap-1">
-                                <div class={`w-4 h-4 bg-gradient-to-r ${companyColor.accentColor} rounded-full animate-pulse`}></div>
-                                <div class={`w-4 h-4 bg-gradient-to-r ${companyColor.accentColor} rounded-full animate-pulse`} style={{animationDelay: "0.5s"}}></div>
-                              </div>
-                              <div class="flex gap-1">
-                                <div class={`w-4 h-4 bg-gradient-to-r ${companyColor.accentColor} rounded-full animate-pulse`} style={{animationDelay: "1s"}}></div>
-                                <div class={`w-4 h-4 bg-gradient-to-r ${companyColor.accentColor} rounded-full animate-pulse`} style={{animationDelay: "1.5s"}}></div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <!-- Enhanced 3D Glow Effect -->
-                          <div class={`absolute inset-0 bg-gradient-to-r ${companyColor.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700 rounded-3xl blur-2xl`}></div>
-
-                          <!-- Enhanced Scan line effect -->
-                          <div class="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700">
-                            <div class="scan-line bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent"></div>
-                          </div>
-                        </div>
-                      </div>
+                      <span class="text-lg font-semibold text-blue-600">{job.company}</span>
                     </div>
-                  );
-                })}
+                    <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                      {job.dateRange}
+                    </div>
+                  </div>
+
+                  <!-- Job responsibilities -->
+                  {job.bullets && job.bullets.length > 0 && (
+                    <ul class="space-y-2">
+                      {job.bullets.map((bullet) => (
+                        <li class="flex items-start gap-3">
+                          <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                          <p class="text-gray-700 leading-relaxed">{bullet}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
   )
 }
-
-<style>
-  @keyframes experienceMatrixFall {
-    0% {
-      transform: translateY(-100vh) rotateZ(0deg);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(100vh) rotateZ(360deg);
-      opacity: 0;
-    }
-  }
-
-  @keyframes scanLine {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }
-
-  @keyframes experienceGlow {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 40px rgba(147, 51, 234, 0.2);
-    }
-    50% {
-      box-shadow: 0 0 30px rgba(6, 182, 212, 0.6), 0 0 60px rgba(147, 51, 234, 0.4);
-    }
-  }
-
-  @keyframes cardFloat3D {
-    0%, 100% {
-      transform: perspective(1000px) rotateX(-1deg) rotateY(1deg) translateY(0px);
-    }
-    50% {
-      transform: perspective(1000px) rotateX(-1deg) rotateY(1deg) translateY(-10px);
-    }
-  }
-
-  .experience-matrix {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-  }
-
-  .experience-matrix span {
-    position: absolute;
-    top: -20px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 14px;
-    color: #00ff41;
-    animation: experienceMatrixFall 12s linear infinite;
-    opacity: 0.7;
-    text-shadow: 0 0 5px #00ff41;
-  }
-
-  .experience-matrix span:nth-child(1) { left: 10%; animation-duration: 8s; }
-  .experience-matrix span:nth-child(2) { left: 30%; animation-duration: 10s; }
-  .experience-matrix span:nth-child(3) { left: 50%; animation-duration: 7s; }
-  .experience-matrix span:nth-child(4) { left: 70%; animation-duration: 9s; }
-  .experience-matrix span:nth-child(5) { left: 85%; animation-duration: 11s; }
-
-  .timeline-item {
-    animation: fadeInLeft 0.8s ease-out forwards;
-    opacity: 0;
-  }
-
-  .achievement-item {
-    animation: fadeInUp 0.6s ease-out forwards;
-    opacity: 0;
-  }
-
-  .timeline-dot {
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .timeline-item:hover .timeline-dot {
-    transform: scale(1.5);
-    filter: blur(0px);
-  }
-
-  .timeline-item .card-3d {
-    animation: cardFloat3D 8s ease-in-out infinite;
-    animation-delay: calc(var(--index) * 0.5s);
-  }
-
-  .timeline-item:hover .card-3d {
-    transform: perspective(1000px) rotateX(-5deg) rotateY(5deg) translateY(-15px);
-    animation: experienceGlow 2s ease-in-out infinite;
-  }
-
-  .scan-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    animation: scanLine 2s ease-in-out;
-    filter: blur(1px);
-  }
-
-  /* Enhanced 3D hover effects */
-  .card-3d {
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-  }
-
-  .card-3d::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    pointer-events: none;
-    transform: translateX(-100%);
-  }
-
-  .card-3d:hover::before {
-    opacity: 1;
-    animation: scanLine 1.5s ease-in-out;
-  }
-
-  /* Enhanced floating animation staggering */
-  .float.stagger-1 {
-    animation: float 6s ease-in-out infinite;
-    animation-delay: -2s;
-  }
-
-  .float.stagger-2 {
-    animation: float 7s ease-in-out infinite;
-    animation-delay: -4s;
-  }
-
-  .float.stagger-3 {
-    animation: float 8s ease-in-out infinite;
-    animation-delay: -1s;
-  }
-
-  /* Mobile responsiveness */
-  @media (max-width: 1024px) {
-    .timeline-item .ml-20 {
-      margin-left: 2rem;
-    }
-
-    .absolute.left-5 {
-      left: 0.5rem;
-    }
-
-    .absolute.left-8 {
-      left: 1rem;
-    }
-  }
-</style>

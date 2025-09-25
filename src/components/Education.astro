@@ -2,291 +2,89 @@
 import { siteConfig } from "../config";
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 const hasCertifications = siteConfig.certifications && siteConfig.certifications.length > 0;
-
-// Function to get certification category color and icon type
-function getCertificationInfo(cert) {
-  if (cert.includes('AI') || cert.includes('Agentic')) {
-    return {
-      gradient: "from-blue-500 to-purple-600",
-      bg: "from-blue-50/80 to-purple-50/80",
-      border: "border-blue-200/60",
-      iconType: "ai",
-      iconColor: "text-blue-600"
-    };
-  } else if (cert.includes('AWS') || cert.includes('Cloud') || cert.includes('Azure')) {
-    return {
-      gradient: "from-orange-500 to-red-600",
-      bg: "from-orange-50/80 to-red-50/80",
-      border: "border-orange-200/60",
-      iconType: "cloud",
-      iconColor: "text-orange-600"
-    };
-  } else if (cert.includes('Google') || cert.includes('Professional')) {
-    return {
-      gradient: "from-green-500 to-emerald-600",
-      bg: "from-green-50/80 to-emerald-50/80",
-      border: "border-green-200/60",
-      iconType: "check",
-      iconColor: "text-green-600"
-    };
-  } else if (cert.includes('Security') || cert.includes('NSE')) {
-    return {
-      gradient: "from-red-500 to-pink-600",
-      bg: "from-red-50/80 to-pink-50/80",
-      border: "border-red-200/60",
-      iconType: "security",
-      iconColor: "text-red-600"
-    };
-  } else if (cert.includes('Network') || cert.includes('CCNA')) {
-    return {
-      gradient: "from-cyan-500 to-blue-600",
-      bg: "from-cyan-50/80 to-blue-50/80",
-      border: "border-cyan-200/60",
-      iconType: "network",
-      iconColor: "text-cyan-600"
-    };
-  } else {
-    return {
-      gradient: "from-slate-500 to-gray-600",
-      bg: "from-slate-50/80 to-gray-50/80",
-      border: "border-slate-200/60",
-      iconType: "default",
-      iconColor: "text-slate-600"
-    };
-  }
-}
 ---
 
 {
   (hasEducation || hasCertifications) && (
-    <section id="education" class="relative py-24 lg:py-32 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden">
-      <!-- Background Elements -->
-      <div class="absolute inset-0">
-        <!-- Animated particles -->
-        <div class="absolute inset-0 opacity-20">
-          <div class="absolute top-20 left-20 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
-          <div class="absolute top-40 right-32 w-1 h-1 bg-purple-400 rounded-full animate-pulse"></div>
-          <div class="absolute bottom-32 left-1/3 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-ping" style="animation-delay: 1s"></div>
-          <div class="absolute bottom-20 right-20 w-2 h-2 bg-pink-400 rounded-full animate-pulse" style="animation-delay: 2s"></div>
+    <section id="education" class="py-16 lg:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+            Education & Certifications
+          </h2>
+          <div class="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            My academic background and professional certifications in technology and AI.
+          </p>
         </div>
 
-        <!-- Gradient mesh -->
-        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-full blur-3xl"></div>
-
-        <!-- Neural network pattern -->
-        <svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="neuralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#60a5fa" stop-opacity="1" />
-              <stop offset="100%" stop-color="#a855f7" stop-opacity="0.5" />
-            </linearGradient>
-          </defs>
-          <g>
-            <line x1="5%" y1="25%" x2="95%" y2="75%" stroke="url(#neuralGradient)" stroke-width="0.5">
-              <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" repeatCount="indefinite"></animate>
-            </line>
-            <line x1="15%" y1="60%" x2="85%" y2="40%" stroke="url(#neuralGradient)" stroke-width="0.5">
-              <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"></animate>
-            </line>
-          </g>
-        </svg>
-      </div>
-
-      <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-24 relative">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          <!-- Title Section -->
-          <div class="lg:col-span-4 scroll-animate">
-            <div class="sticky top-32">
-              <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-                <span class="gradient-text">Education</span><br />
-                <span class="text-white">&</span><br />
-                <span class="gradient-text-tech">Credentials</span>
-              </h2>
-
-              <div class="relative mb-8">
-                <div class="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                <div class="w-12 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 ml-8"></div>
-              </div>
-
-              <!-- Learning Stats -->
-              <div class="glass-dark rounded-2xl p-6 border border-white/10 mb-8">
-                <div class="flex items-center justify-between mb-4">
-                  <span class="text-sm font-mono text-white/70">learning.status</span>
-                  <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                </div>
-                <p class="text-xl font-bold gradient-text-neural mb-1">Continuous Learning</p>
-                <p class="text-sm text-white/70 font-mono">{siteConfig.certifications.length}+ active certifications</p>
-              </div>
-
-              <!-- Learning Philosophy -->
-              <div class="glass-dark rounded-2xl p-6 border border-white/10">
-                <h3 class="text-lg font-semibold text-white mb-3">Learning Philosophy</h3>
-                <p class="text-sm text-white/80 leading-relaxed">
-                  From foundational computer science to cutting-edge AI certifications,
-                  I believe in continuous learning to stay ahead in the rapidly evolving tech landscape.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Content -->
-          <div class="lg:col-span-8 space-y-16">
-            {/* Education Section */}
-            {hasEducation && (
-              <div class="scroll-animate stagger-2">
-                <div class="flex items-center gap-4 mb-8">
-                  <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                  </div>
-                  <h3 class="text-3xl font-bold text-white">Academic Foundation</h3>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {siteConfig.education.map((edu, index) => (
-                    <div
-                      class="card-modern bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 p-6 hover:bg-white/15 transition-all duration-500 education-card"
-                      style={`animation-delay: ${index * 0.2}s`}
-                    >
-                      <!-- University Badge -->
-                      <div class="flex items-start justify-between mb-4">
-                        <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
-                          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-2m-2 0H9m12 0V9a2 2 0 00-2-2M5 21h14M5 21H3m2 0v-4a2 2 0 012-2h6a2 2 0 012 2v4" />
-                          </svg>
-                        </div>
-                        <div class="text-right">
-                          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/20 text-blue-300 border border-blue-400/30">
-                            {edu.dateRange}
-                          </span>
-                        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Education Section -->
+          {hasEducation && (
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">Education</h3>
+              <div class="space-y-6">
+                {siteConfig.education.map((edu) => (
+                  <div class="bg-white rounded-lg shadow-md border p-6 card-hover">
+                    <div class="flex items-start gap-4">
+                      <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                        </svg>
                       </div>
-
-                      <div class="mb-4">
-                        <h4 class="text-xl font-bold text-white mb-2">{edu.degree}</h4>
-                        <p class="text-lg gradient-text-tech font-semibold">{edu.school}</p>
-                      </div>
-
-                      <div class="space-y-2">
-                        {edu.achievements.map((achievement) => (
-                          <div class="flex items-start gap-3">
-                            <div class="w-5 h-5 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mt-0.5">
-                              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                              </svg>
-                            </div>
-                            <span class="text-white/90 text-sm leading-relaxed">{achievement}</span>
-                          </div>
-                        ))}
+                      <div class="flex-1">
+                        <h4 class="text-lg font-bold text-gray-900 mb-1">
+                          {edu.degree}
+                        </h4>
+                        <p class="text-blue-600 font-semibold mb-2">
+                          {edu.school}
+                        </p>
+                        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-3">
+                          {edu.dateRange}
+                        </div>
+                        {edu.achievements && edu.achievements.length > 0 && (
+                          <ul class="space-y-1">
+                            {edu.achievements.map((achievement) => (
+                              <li class="flex items-start gap-2">
+                                <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                                <span class="text-gray-700 text-sm">{achievement}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Certifications Section */}
-            {hasCertifications && (
-              <div class="scroll-animate stagger-3">
-                <div class="flex items-center gap-4 mb-8">
-                  <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                    </svg>
                   </div>
-                  <h3 class="text-3xl font-bold text-white">Professional Certifications</h3>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {siteConfig.certifications.map((cert, index) => {
-                    const certInfo = getCertificationInfo(cert);
-                    return (
-                      <div
-                        class="certification-card group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 p-4 hover:bg-white/15 transition-all duration-300 hover:scale-105"
-                        style={`animation-delay: ${index * 0.1}s`}
-                      >
-                        <!-- Cert Icon -->
-                        <div class="flex items-center gap-3 mb-3">
-                          <div class={`w-10 h-10 rounded-xl bg-gradient-to-br ${certInfo.gradient} p-0.5 group-hover:scale-110 transition-transform duration-300`}>
-                            <div class="w-full h-full bg-slate-900 rounded-xl flex items-center justify-center">
-                              {certInfo.iconType === 'ai' && (
-                                <svg class={`w-5 h-5 ${certInfo.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                </svg>
-                              )}
-                              {certInfo.iconType === 'cloud' && (
-                                <svg class={`w-5 h-5 ${certInfo.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                                </svg>
-                              )}
-                              {certInfo.iconType === 'check' && (
-                                <svg class={`w-5 h-5 ${certInfo.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                              )}
-                              {certInfo.iconType === 'security' && (
-                                <svg class={`w-5 h-5 ${certInfo.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg>
-                              )}
-                              {certInfo.iconType === 'network' && (
-                                <svg class={`w-5 h-5 ${certInfo.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                                </svg>
-                              )}
-                              {certInfo.iconType === 'default' && (
-                                <svg class={`w-5 h-5 ${certInfo.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                                </svg>
-                              )}
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Cert Title -->
-                        <h4 class="text-sm font-semibold text-white leading-tight group-hover:text-blue-300 transition-colors duration-300">
-                          {cert}
-                        </h4>
-
-                        <!-- Hover glow effect -->
-                        <div class={`absolute inset-0 bg-gradient-to-r ${certInfo.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`}></div>
-
-                        <!-- Badge indicator -->
-                        <div class="absolute top-2 right-2 w-2 h-2 bg-green-400 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      </div>
-                    );
-                  })}
-                </div>
+                ))}
               </div>
-            )}
-          </div>
+            </div>
+          )}
+
+          <!-- Certifications Section -->
+          {hasCertifications && (
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">Certifications</h3>
+              <div class="grid grid-cols-1 gap-3">
+                {siteConfig.certifications.map((cert) => (
+                  <div class="bg-gray-50 rounded-lg p-4 border hover:bg-gray-100 transition-colors duration-200">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <span class="text-gray-900 font-medium flex-1">
+                        {cert}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
   )
 }
-
-<style>
-  .education-card {
-    animation: fadeInUp 0.8s ease-out forwards;
-    opacity: 0;
-  }
-
-  .certification-card {
-    animation: fadeInScale 0.6s ease-out forwards;
-    opacity: 0;
-  }
-
-  @keyframes fadeInScale {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-</style>
