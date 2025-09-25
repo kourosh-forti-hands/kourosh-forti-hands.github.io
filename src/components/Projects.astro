@@ -68,12 +68,12 @@ function getProjectColor(skills) {
           <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="projectGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0" />
+                <stop offset="0%" stop-color="#667eea" stop-opacity="1" />
+                <stop offset="100%" stop-color="#764ba2" stop-opacity="0" />
               </linearGradient>
               <linearGradient id="projectGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#f5576c;stop-opacity:0" />
+                <stop offset="0%" stop-color="#f093fb" stop-opacity="1" />
+                <stop offset="100%" stop-color="#f5576c" stop-opacity="0" />
               </linearGradient>
               <pattern id="project-grid" width="80" height="80" patternUnits="userSpaceOnUse">
                 <circle cx="40" cy="40" r="2" fill="url(#projectGrad1)" opacity="0.6">
@@ -202,7 +202,7 @@ function getProjectColor(skills) {
                 return (
                   <div
                     class="scroll-animate project-card"
-                    style={`animation-delay: ${index * 0.2}s`}
+                    style={{"animationDelay": `${index * 0.2}s`}}
                   >
                     <Component
                       {...linkProps}
