@@ -1,0 +1,99 @@
+﻿Kourosh Mobl
+ (314)-223-9356
+Moblkourosh@gmail.com
+
+
+PROFESSIONAL SUMMARY
+Senior Consultant working on highly impactful cloud implementations for some of the largest international organizations. Technical decision-maker and advisor who is committed to shaping the industry to build more resilient infrastructure. Passionate problem-solver who is hungry to learn, grow, and contribute to solving cloud architecture challenges. 
+
+
+* Information Assurance/Security
+* Network and Architecture Design
+* Linux/Unix/Windows Administration
+* Cloud/Enterprise Hybrid Design
+* AWS, Azure, GCP
+* Terraform/Packer/Python/Ansible
+Professional Experience
+
+
+Coalfire Systems                                                                     Sept 2021 - Present               
+Senior Consultant, Cloud Services 
+* Led and contributed to projects consisting of design, build and maintenance of secure, audit-ready AWS environments, contributing to $5M+ in revenue; within compressed project timelines. 
+* Partnered with clients to understand their commercial environments and core applications functionality to develop a successful efficient implementation of a net-new FedRAMP and/or DoD compliant environment. 
+* Evaluated efficiency processes of technologies used by project teams, improved bash Shell scripts, Terraform code, and documentation to ensure efficient execution from junior and mid-level engineers.
+* Deployed large-scale SIEM and data management tools on behalf of customers, including Elastic Stack and Splunk Enterprise. Configured log ingestion from disparate sources including Amazon CloudTrail, CloudWatch, Linux/ Windows OS logs, and security agents. Set up dashboards and alerting for performance and security events.
+* Assisted customers with devising secure DNS management strategies in environments with strict access requirements, and assisted customers with configuring and testing DNSSEC on their domains. 
+* Developed a public facing code base of terraform modules and documentation as part of a FedRAMP-focused open source release effort.
+* Designed and implemented cloud based networking solutions leveraging cloud-native and cloud-agnostic tooling to provide secure, and resilient data planes.
+* Developed multiple Terraform modules with flexibility being a core value of module functionality. Allowing future engineers to spend less LOE with modifying or developing any pre-existing code, resulting in more profitable projects. Such as Splunk ingestion of AWS logs via Kinesis Firehose, dynamically ingests based off net new cloudwatch groups, including AWS Organization capable features.
+* Orchestrated complex, multi-module deployment strategies for core cloud resources via IaC
+* SME of cloud networking adhering to best practices for configuration and architecture.
+
+
+Consultant, Cloud Services 
+* Implemented security best practices utilizing cloud-native tooling such as, AWS Guard Duty, Cloudtrail, Cloudwatch, Config, SSM, Inspector and Detective.
+* Providing continuous guidance and assistance to peers and clients to ensure efficient troubleshooting to support LOE being spent in more impactful manners, in addition to improving client happiness from the perspective of organizational partnership. 
+* Provide integral guidance for clients as a strategic partner guiding them through infrastructure design and implementations adhering to FedRAMP guidance and requirements.
+
+
+City and County of Broomfield                                                  Aug 2020 - Sept 2021               
+Senior Network Engineer, Internal DevOps 
+* Responsible for providing technical recommendations to public safety departments to meet their needs while maintaining a high level of data security through multi-agency connectivity solutions.
+* Implemented and migrated multiple VPN tunnels to a FortiGate VPN concentrator to handle essential Public Safety connectivity.
+* Plan, design and build implementations and solutions for physical and virtual based networking, including but not limited to cloud networking.
+* Provide a high level of customer service to internal and external customers in the form of network security and connectivity.
+* Plan and design connectivity models utilizing outside plant fiber to provide the highest level of data integrity and security.
+* Troubleshoot and resolve network issues and provide enhanced remediation and mitigation solutions to help prevent repeat incidents.
+Flexential (Formerly AppliedTrust Engineering, a ViaWest Company)           Jan 2018 – Aug 2020               
+Professional Services Department 
+Senior Engineer, Technical Lead for the Network Architecture Business Service
+* Senior Technical Lead of Network Architecture services, designing or re-architecting overall enterprise network infrastructure for various customers.
+* Supervisory Team Lead to internship program, serving as lead engineer supporting the development of staff and acting as a mentor.
+* Serving as subject matter expert to clients to translate business requirements into conceptual and physical network architecture designs.
+* Extensive experience with implementing and supporting BGP, SDWAN, EIGRP, MPLS, HSRP, STP, Cisco Meraki stack, WAN Optimization technologies and Cisco Nexus.
+* Design and Architect hyperscale cloud connectivity to data center workloads primarily in Azure and AWS, but familiar with Google Cloud.
+* Serve as primary liaison with new and senior clients, to ensure client infrastructure, availability, and future growth needs are met.
+
+
+Engineer, Consulting Security Engineer
+* Conduct security assessments of client environments based on cyber security frameworks such as ISO, NIST, PCI, HIPAA, and other state, and federal regulations.
+* Integrate automation of configuration management (e.g. ansible) to secure infrastructure using benchmarks such as the CIS (Center for Internet Security) benchmarks.
+* Design and deploy enterprise LANs, WANs and Wireless networks including routers, switches, firewalls, access points, load balancers and other network related appliances.
+* Supported DevOps environments across AWS, Azure, and GCP. Including implementations of connectivity between on-prem and customer cloud environments.
+
+
+Charter Spectrum                                                                            May 2017 – July 2017
+Network Engineer Intern, Network Automation Team
+
+
+Monsanto                                                                            May 2016 – August 2016
+Information Security Intern, Information Security Office (ISO)
+Notable projects
+* Large scale service provider network redesign and migration from Juniper to Fortigate, consisting of 100’s of customer IPsec connections with overlapping customer side subnets, terminating to a HA Core firewall pair. Worked to break this out into a net new architecture consisting of a core firewall pair to handle server connections and an edge firewall pair to handle customer connections and facilitate routing to the core firewall. 
+* Designed and implemented an event center network architecture to facilitate digital streaming services that utilize connections to AWS to facilitate customer access to AWS elemental.
+* Migrate a customer’s WAN network from a legacy MPLS to an SDWAN fabric, utilizing their old MPLS and public ISPs as underlays with IPsec overlays.
+* Lead multiple security assessments as part of a large-scale security awareness engagement with a worldwide HVAC parts supplier. Consisted of visiting multiple sites to assess their current environment state as well as any defined policies and procedures. Utilized the data gathered to define specific improvement points to lead them to an ideal secure future state.
+* Discovered and confirmed major Cisco ASA vulnerability with the vendor that was affecting 100’s of customer devices, escalated discovery to executive leadership and assisted with the planning of remediation of all affected devices.
+* Built out cloud connect implementation service offering, consisted of creating statement of work, reference architectures and technical documentation to facilitate successful customer implementations. Actively implemented or oversaw majority of implementations to build out data points for improvement of the service. 
+Formal Education
+
+
+University of Missouri, Bachelors of Science                                           Dec 2017               
+B.S. in Information Technology and Minor in Computer Science  
+
+
+Saint Louis Community College, Associate of Applied Science                        May 2015               
+A.A.S. in Network Engineering (emphasis in infrastructure operations)
+ 
+
+
+Certification & Training
+Google Professional Cloud Security Engineer
+Google Professional Cloud Network Engineer
+AWS Certified Cloud Practitioner (CPP)
+AWS Certified Advanced Networking - Specialty
+AWS Certified SysOps Administrator – Associate
+Azure Network Engineer Associate
+Cisco Certified Network Associate (CCNA) – Routing and Switching
+Fortinet NSE 4 – Network Security Professional
+HashiCorp Terraform Associate

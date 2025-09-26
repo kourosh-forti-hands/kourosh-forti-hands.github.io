@@ -6,15 +6,14 @@ const hasCertifications = siteConfig.certifications && siteConfig.certifications
 
 {
   (hasEducation || hasCertifications) && (
-    <section id="education" class="py-16 lg:py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="education" style="background-color: var(--bg-secondary);">
+      <div class="container">
         <!-- Section Header -->
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+          <h2 class="mb-4" style="color: var(--color-primary);">
             Education & Certifications
           </h2>
-          <div class="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-secondary);">
             My academic background and professional certifications in technology and AI.
           </p>
         </div>
@@ -23,32 +22,34 @@ const hasCertifications = siteConfig.certifications && siteConfig.certifications
           <!-- Education Section -->
           {hasEducation && (
             <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-6">Education</h3>
+              <h3 class="text-xl font-semibold mb-6" style="color: var(--color-primary);">Education</h3>
               <div class="space-y-6">
                 {siteConfig.education.map((edu) => (
-                  <div class="bg-white rounded-lg shadow-md border p-6 card-hover">
+                  <div class="card">
                     <div class="flex items-start gap-4">
-                      <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg width="16" height="16" class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background: var(--color-accent); opacity: 0.1;">
+                        <svg width="16" height="16" style="color: var(--color-accent);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                         </svg>
                       </div>
                       <div class="flex-1">
-                        <h4 class="text-lg font-bold text-gray-900 mb-1">
+                        <h4 class="text-lg font-semibold mb-1" style="color: var(--color-primary);">
                           {edu.degree}
                         </h4>
-                        <p class="text-blue-600 font-semibold mb-2">
+                        <p class="font-semibold mb-2" style="color: var(--color-accent);">
                           {edu.school}
                         </p>
-                        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-3">
-                          {edu.dateRange}
+                        <div class="mb-3">
+                          <span class="badge">
+                            {edu.dateRange}
+                          </span>
                         </div>
                         {edu.achievements && edu.achievements.length > 0 && (
-                          <ul class="space-y-1">
+                          <ul class="space-y-2">
                             {edu.achievements.map((achievement) => (
-                              <li class="flex items-start gap-2">
-                                <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                                <span class="text-gray-700 text-sm">{achievement}</span>
+                              <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 rounded-full mt-2 flex-shrink-0" style="background: var(--color-accent);"></div>
+                                <span style="color: var(--text-secondary);">{achievement}</span>
                               </li>
                             ))}
                           </ul>
@@ -64,17 +65,17 @@ const hasCertifications = siteConfig.certifications && siteConfig.certifications
           <!-- Certifications Section -->
           {hasCertifications && (
             <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-6">Certifications</h3>
-              <div class="grid grid-cols-1 gap-3">
+              <h3 class="text-xl font-semibold mb-6" style="color: var(--color-primary);">Certifications</h3>
+              <div class="space-y-3">
                 {siteConfig.certifications.map((cert) => (
-                  <div class="bg-gray-50 rounded-lg p-4 border hover:bg-gray-100 transition-colors duration-200">
+                  <div class="card" style="padding: var(--spacing-sm);">
                     <div class="flex items-center gap-3">
-                      <div class="w-6 h-6 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg width="16" height="16" class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div class="w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0" style="background: var(--color-success); opacity: 0.1;">
+                        <svg width="16" height="16" style="color: var(--color-success);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <span class="text-gray-900 font-medium flex-1">
+                      <span class="font-medium flex-1" style="color: var(--text-primary);">
                         {cert}
                       </span>
                     </div>

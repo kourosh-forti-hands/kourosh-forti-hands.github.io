@@ -5,41 +5,47 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
 
 {
   hasProjects && (
-    <section id="projects" class="py-16 lg:py-20 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" style="background-color: var(--bg-secondary);">
+      <div class="container">
         <!-- Section Header -->
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+          <h2 class="mb-4" style="color: var(--color-primary);">
             Featured Projects
           </h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            AI-powered solutions and enterprise automation systems
+          <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-secondary);">
+            AI-powered solutions and enterprise automation systems that drive real business impact
           </p>
         </div>
 
         <!-- Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {siteConfig.projects.map((project) => (
-            <div class="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200">
+            <div class="card">
               {project.link ? (
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="block p-6"
+                  class="block"
+                  style="text-decoration: none; color: inherit;"
                 >
-                  <h3 class="text-xl font-semibold text-gray-900 mb-3">
-                    {project.name}
-                  </h3>
+                  <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-xl font-semibold" style="color: var(--color-primary); margin-bottom: 0;">
+                      {project.name}
+                    </h3>
+                    <svg width="20" height="20" class="flex-shrink-0 ml-2" style="color: var(--color-accent);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </div>
 
-                  <p class="text-gray-600 mb-4">
+                  <p class="mb-4" style="color: var(--text-secondary);">
                     {project.description}
                   </p>
 
                   {project.skills && project.skills.length > 0 && (
                     <div class="flex flex-wrap gap-2">
                       {project.skills.map((skill) => (
-                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full">
+                        <span class="badge">
                           {skill}
                         </span>
                       ))}
@@ -47,19 +53,24 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                   )}
                 </a>
               ) : (
-                <div class="p-6">
-                  <h3 class="text-xl font-semibold text-gray-900 mb-3">
-                    {project.name}
-                  </h3>
+                <div>
+                  <div class="flex items-start justify-between mb-4">
+                    <h3 class="text-xl font-semibold" style="color: var(--color-primary); margin-bottom: 0;">
+                      {project.name}
+                    </h3>
+                    <span class="badge">
+                      Private
+                    </span>
+                  </div>
 
-                  <p class="text-gray-600 mb-4">
+                  <p class="mb-4" style="color: var(--text-secondary);">
                     {project.description}
                   </p>
 
                   {project.skills && project.skills.length > 0 && (
                     <div class="flex flex-wrap gap-2">
                       {project.skills.map((skill) => (
-                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
+                        <span class="badge">
                           {skill}
                         </span>
                       ))}
