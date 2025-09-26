@@ -22,9 +22,9 @@ export const siteConfig = {
   },
   social: {
     email: "Moblkourosh@gmail.com",
-    linkedin: "https://linkedin.com/in/kouroshmobl",
+    linkedin: "https://www.linkedin.com/in/kourosh-mobl/",
     twitter: "",
-    github: "https://github.com/kouroshmobl",
+    github: "https://github.com/kourosh-forti-hands",
   },
   aboutMe:
     "AI Engineer specializing in agentic AI systems and intelligent automation for enterprise environments. Building cutting-edge solutions using AWS Bedrock, AgentCore, and modern LLM architectures to transform compliance, security, and cloud operations. Combining deep cloud infrastructure expertise with advanced AI engineering to deliver transformative solutions that automate complex workflows and enhance decision-making for large-scale organizations.",
