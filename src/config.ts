@@ -27,10 +27,14 @@ export const siteConfig = {
     github: "https://github.com/kourosh-forti-hands",
   },
   aboutMe:
-    "Results-driven Senior AI Engineer with extensive expertise in multi-cloud environments (AWS, Azure, and GCP) and advanced automation techniques. Founding member of the AI Trust and Security Engineering practice, pioneering AI integration strategies for compliance and audit processes. Specializes in developing flexible, multifunctional Terraform modules and building intelligent agentic AI solutions. Known for transforming complex technical requirements into elegant, scalable architectures. Cultivates team growth through proactive knowledge sharing and targeted coaching, empowering colleagues to develop stronger troubleshooting skills and technical independence.",
+    "Senior AI Engineer and Cloud Architect with extensive expertise in multi-cloud environments (AWS, Azure, GCP) and agentic AI systems. Building intelligent automation solutions that transform compliance, security, and cloud operations for enterprise environments. From pioneering open-source FedRAMP infrastructure and architecting EKS solutions for DoD environments, to developing multi-agent cyber threat intelligence systems—I bridge deep infrastructure expertise with cutting-edge AI engineering to deliver scalable, audit-ready solutions.",
   skills: [
     "Agentic AI",
     "AWS Bedrock",
+    "AgentCore",
+    "LLM/GenAI",
+    "RAG Systems",
+    "Prompt Engineering",
     "Python",
     "Bash",
     "Terraform",
