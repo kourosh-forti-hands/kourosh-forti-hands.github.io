@@ -88,20 +88,9 @@ const hasAwards = siteConfig.awards && siteConfig.awards.length > 0;
           )}
         </div>
 
-        <!-- Divider -->
-        {(hasCourses || hasAwards) && (
-          <div class="pt-16 pb-8">
-            <div class="flex items-center gap-4">
-              <div class="flex-1 h-px" style="background: var(--border-color);"></div>
-              <span class="text-sm font-medium uppercase tracking-wider" style="color: var(--text-secondary);">Professional Development</span>
-              <div class="flex-1 h-px" style="background: var(--border-color);"></div>
-            </div>
-          </div>
-        )}
-
         <!-- Training & Awards Row -->
         {(hasCourses || hasAwards) && (
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
             <!-- Recent Training Section -->
             {hasCourses && (
               <div>
