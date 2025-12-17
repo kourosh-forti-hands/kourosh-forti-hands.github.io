@@ -13,10 +13,10 @@ const hasAwards = siteConfig.awards && siteConfig.awards.length > 0;
         <!-- Section Header -->
         <div class="text-center mb-12">
           <h2 class="mb-4" style="color: var(--color-primary);">
-            Education & Certifications
+            Background & Credentials
           </h2>
           <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-secondary);">
-            My academic background and professional certifications in technology and AI.
+            Academic foundation, professional certifications, continuous learning, and recognition.
           </p>
         </div>
 
@@ -88,13 +88,22 @@ const hasAwards = siteConfig.awards && siteConfig.awards.length > 0;
           )}
         </div>
 
-        <!-- Courses & Awards Row -->
+        <!-- Divider -->
         {(hasCourses || hasAwards) && (
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
-            <!-- Courses Section -->
+          <div class="my-12 flex items-center gap-4">
+            <div class="flex-1 h-px" style="background: var(--border-color);"></div>
+            <span class="text-sm font-medium" style="color: var(--text-secondary);">Professional Development</span>
+            <div class="flex-1 h-px" style="background: var(--border-color);"></div>
+          </div>
+        )}
+
+        <!-- Training & Awards Row -->
+        {(hasCourses || hasAwards) && (
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Recent Training Section -->
             {hasCourses && (
               <div>
-                <h3 class="text-xl font-semibold mb-6" style="color: var(--color-primary);">Courses & Training</h3>
+                <h3 class="text-xl font-semibold mb-6" style="color: var(--color-primary);">Recent Training</h3>
                 <div class="space-y-3">
                   {siteConfig.courses.map((course) => (
                     <div class="card" style="padding: var(--spacing-sm);">
@@ -122,7 +131,7 @@ const hasAwards = siteConfig.awards && siteConfig.awards.length > 0;
             <!-- Awards Section -->
             {hasAwards && (
               <div>
-                <h3 class="text-xl font-semibold mb-6" style="color: var(--color-primary);">Awards & Recognition</h3>
+                <h3 class="text-xl font-semibold mb-6" style="color: var(--color-primary);">Recognition</h3>
                 <div class="space-y-3">
                   {siteConfig.awards.map((award) => (
                     <div class="card" style="padding: var(--spacing-sm);">
